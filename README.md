@@ -1,7 +1,7 @@
 ## CSE 486/586 Distributed Systems
 
 
-## Programming Assignment 2, Part B
+## PA - 2B
 
 
 ## Group Messenger with Total and FIFO Ordering Guarantees
@@ -86,13 +86,13 @@ We have testing programs to help you see how your code does with our grading cri
 9. Unlike previous graders, the grader for this assignment requires you to directly give the path of your apk to it. The grader will take care of installing/uninstalling the apk as necessary.
 10. The grader uses multiple threads to test your code and each thread will independently print out its own log messages. This means that an error message might appear in the middle of the combined log messages from all threads, rather than at the end.
 11. The grader has many options you can use for your testing. It allows you to choose which phase to test and for phase 2, how many times to run. It also has an option to print out verbose output, which can be helpful for debugging. You can enter the following command to see the options: \
- \
-$ <grader executable> -h \
-
-12. You might run into a debugging problem if you're reinstalling your app from Android Studio. This is because your content provider will still retain previous values even after reinstalling. This won't be a problem if you uninstall explicitly before reinstalling; uninstalling will delete your content provider storage as well. In order to do this, you can uninstall with this command: \
- \
+ ```
+$ <grader executable> -h
+```
+12. You might run into a debugging problem if you're reinstalling your app from Android Studio. This is because your content provider will still retain previous values even after reinstalling. This won't be a problem if you uninstall explicitly before reinstalling; uninstalling will delete your content provider storage as well. In order to do this, you can uninstall with this command: 
+ ```
 $ adb uninstall edu.buffalo.cse.cse486586.groupmessenger2
-
+```
 
 ### Submission
 
@@ -132,10 +132,5 @@ This assignment is 10% of your final grade. The breakdown for this assignment is
 *   Please use full duplex TCP for both sending and receiving. This means that there is no need to create a new connection every time you send a message. If you’re sending and receiving multiple messages from a remote AVD, then you can keep using the same socket. This makes it easier.
 *   Please do not use Java object serialization (i.e., implementing Serializable). It will create large objects that need to be sent and received. The message size overhead is unnecessarily large if you implement Serializable.
 *   Please do not assume that there is a fixed number of messages (e.g., 25 messages) sent in your system. Your implementation should not hardcode the number of messages in any way.
-*   There is a cap on the number of AsyncTasks that can run at the same time, even when you use THREAD_POOL_EXECUTOR. The limit is "roughly" 5. Thus, if you need to create more than 5 AsyncTasks (roughly, once again), then you will have to use something else like Thread. However, I really do not think that it is necessary to create that many AsyncTasks for the PAs in this course. Thus, if your code doesn't work because you hit the AsyncTask limit, then please think hard why you're creating that many threads in the first place. \
- \
-This document gives you more details on the limit and you might (or might not, depending on your background) understand why I say it's "roughly" 5. \
- \
-[http://developer.android.com/reference/java/util/concurrent/ThreadPoolExecutor.html](http://developer.android.com/reference/java/util/concurrent/ThreadPoolExecutor.html) \
-(Read "Core and maximum pool sizes.")
+*   There is a cap on the number of AsyncTasks that can run at the same time, even when you use THREAD_POOL_EXECUTOR. The limit is "roughly" 5. Thus, if you need to create more than 5 AsyncTasks (roughly, once again), then you will have to use something else like Thread. However, I really do not think that it is necessary to create that many AsyncTasks for the PAs in this course. Thus, if your code doesn't work because you hit the AsyncTask limit, then please think hard why you're creating that many threads in the first place. 
 *   For Windows users: In the past, it was discovered that sometimes you cannot run a grader and Android Studio at the same time. As far as I know, this happens rarely, but there is no guarantee that you will not encounter this issue. Thus, if you think that a grader is not running properly and you don't know why, first try closing Android Studio and run the grader.
