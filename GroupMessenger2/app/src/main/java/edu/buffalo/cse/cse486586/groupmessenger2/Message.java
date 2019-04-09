@@ -3,11 +3,11 @@ package edu.buffalo.cse.cse486586.groupmessenger2;
 public class Message implements Comparable{
     String message; // My message
     int portNum; // Who I am
-    int proposalNum; // Final proposal number
-    int processNum; // Final process number
+    int proposalNum; // Proposal number
+    int processNum; // Process number
     String status; // Message Status
     int seqNum; // SeqNum
-    boolean isDeliverable = false;
+    boolean isDeliverable = false; // Boolean variable to decide on persistance
 
     public Message(int seqNum, int proposalNum, int processNum, int portNum, String message, String status) {
         this.seqNum = seqNum;
@@ -22,6 +22,7 @@ public class Message implements Comparable{
     @Override
     public String toString() {
         // Serialize the message with ";"
+        // as delimiter
 
         StringBuilder res = new StringBuilder();
 
