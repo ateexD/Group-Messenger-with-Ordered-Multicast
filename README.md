@@ -33,7 +33,7 @@ As with the previous assignment, you need to have a working content provider. Th
 
 ### Step 2: Implementing Total and FIFO Ordering Guarantees
 
-This is the meat of this assignment and you need to implement total and FIFO guarantees. You will need to design an algorithm that does this and implement it. An important thing to keep in mind is that there will be a failure of an app instance in the middle of the execution.**_ _**The requirements are:
+This is the meat of this assignment and you need to implement total and FIFO guarantees. You will need to design an algorithm that does this and implement it. An important thing to keep in mind is that there will be a failure of an app instance in the middle of the execution. The requirements are:
 
 
 
