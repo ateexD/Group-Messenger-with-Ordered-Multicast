@@ -54,6 +54,7 @@ This is the meat of this assignment and you need to implement total and FIFO gua
     8. The grading will use 5 AVDs. The redirection ports are 11108, 11112, 11116, 11120, and 11124.
     9. You should just hard-code the above 5 ports and use them to set up connections.
     10. Please use the code snippet provided in PA1 on how to determine your local AVD.
+    
         1. emulator-5554: “5554”
         2. emulator-5556: “5556”
         3. emulator-5558: “5558”
